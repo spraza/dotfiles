@@ -1,2 +1,2 @@
 # dotfiles
-A collection of dot files I use
+A collection of my dot files
