@@ -77,7 +77,8 @@
 (global-set-key (kbd "M-s") 'helm-occur)
 (global-set-key (kbd "C-c m i") 'helm-do-ag)
 (global-set-key (kbd "C-x b") 'helm-mini)
-(define-key c-mode-base-map (kbd "C-i") (function company-complete))
+(define-key c-mode-base-map (kbd "C-u") (function company-complete))
+(define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
 
 ;; Customize emacs mode line
 ;; using setq-default; applies to /all/ modes
