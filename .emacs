@@ -10,14 +10,25 @@
 ;; Hide menu bar (at the top)
 (menu-bar-mode 0)
 
-;; Key Bindings
-(global-set-key (kbd "C-M-l") 'linum-mode)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x f") 'helm-find-with-prefix-arg)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "M-s") 'helm-occur)
-(global-set-key (kbd "C-c m i") 'helm-do-ag)
-(global-set-key (kbd "C-x b") 'helm-mini)
+;; Install packages from "package"
+;; NOTE: Not all packages in this file are installed this way
+;;       Some are installed manually (see later sections of the file)
+(require 'package)
+;; List of packages
+(setq package-list '(company flycheck))
+;; Package location(s)
+(add-to-list 'package-archives
+	     '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
+;; Activate all the packages (in particular autoloads)
+(package-initialize)
+;; Fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+;; Install the packages if nt already installed
+(dolist (package package-list)
+  (unless (package-installed-p package)
+        (package-install package)))
+
 
 ;; helm, async setup
 ;; https://github.com/emacs-helm/helm
@@ -40,6 +51,33 @@
 (load-file "~/git-repos/smooth-scrolling/smooth-scrolling.el")
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
+
+;; rtags setup
+(add-to-list 'load-path "~/git-repos/rtags/build/src")
+(load-file "~/git-repos/rtags/build/src/rtags.el")
+(require 'rtags)
+(require 'company)
+(require 'flycheck-rtags)
+(require 'rtags-helm)
+;; (setq rtags-use-helm t) ;; uncomment if helm rtags integration is required
+(setq rtags-autostart-diagnostics t)
+(setq rtags-completions-enabled t)
+(rtags-diagnostics)
+(push 'company-rtags company-backends)
+(global-company-mode)
+;; Start rdm (rtags server) automatically in C/C++ modes
+(add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+(add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
+
+;; Key Bindings
+(global-set-key (kbd "C-M-l") 'linum-mode)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x f") 'helm-find-with-prefix-arg)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "M-s") 'helm-occur)
+(global-set-key (kbd "C-c m i") 'helm-do-ag)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(define-key c-mode-base-map (kbd "C-i") (function company-complete))
 
 ;; Customize emacs mode line
 ;; using setq-default; applies to /all/ modes
