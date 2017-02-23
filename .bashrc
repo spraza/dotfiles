@@ -208,3 +208,8 @@ export GREP_COLOR='1;31' # green for matches
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
 unset LANG
 export LC_ALL=POSIX
+
+# 2.6) add ssh key to the ssh-agent
+# This will ask for passphrase once and then won't ask again
+# for git clone/pull/push etc.
+alias sshadd='ssh-add ~/.ssh/id_rsa'
