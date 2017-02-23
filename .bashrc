@@ -209,7 +209,7 @@ export GREP_COLOR='1;31' # green for matches
 unset LANG
 export LC_ALL=POSIX
 
-# 2.6) add ssh key to the ssh-agent
+# 2.6) start ssh-agent and ssh-add
 # This will ask for passphrase once and then won't ask again
 # for git clone/pull/push etc.
-alias sshadd='ssh-add ~/.ssh/id_rsa'
+alias sshauth="eval \"\$(ssh-agent -s)\" && ssh-add ~/.ssh/id_rsa"
