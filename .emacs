@@ -29,7 +29,26 @@
   (unless (package-installed-p package)
         (package-install package)))
 
-;; org/babel configuration
+;; org/babel configuration (inspiration from https://github.com/hrs/dotfiles/blob/master/emacs.d/configuration.org)
+;; display settings
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (org-bullets-mode t)))
+(setq org-ellipsis " ...")
+(setq org-src-fontify-natively t)
+(setq org-src-tab-acts-natively t)
+(setq org-src-window-setup 'current-window)
+;; export settings (general)
+(setq org-export-with-smart-quotes t)
+(setq org-latex-listings 'minted)
+;; export settings (pdf)
+(require 'ox-latex)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(setq org-latex-listings 'minted)
+(setq org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	"pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 ;; enable active languages in babel
 (org-babel-do-load-languages
  'org-babel-load-languages
