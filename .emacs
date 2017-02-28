@@ -15,7 +15,7 @@
 ;;       Some are installed manually (see later sections of the file)
 (require 'package)
 ;; List of packages
-(setq package-list '(company flycheck))
+(setq package-list '(company flycheck haskell-mode))
 ;; Package location(s)
 (add-to-list 'package-archives
 	     '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
@@ -24,11 +24,18 @@
 ;; Fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
-;; Install the packages if nt already installed
+;; Install the packages if not already installed
 (dolist (package package-list)
   (unless (package-installed-p package)
         (package-install package)))
 
+;; org/babel configuration
+;; enable active languages in babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (haskell . t)
+   ))
 
 ;; helm, async setup
 ;; https://github.com/emacs-helm/helm
