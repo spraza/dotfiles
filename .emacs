@@ -36,6 +36,8 @@
  '((emacs-lisp . t)
    (haskell . t)
    ))
+;; don't want to type "yes" everytime I want to execute some code
+(setq org-confirm-babel-evaluate nil)
 
 ;; helm, async setup
 ;; https://github.com/emacs-helm/helm
