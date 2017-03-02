@@ -97,6 +97,12 @@
 (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
 (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
 
+;; Keyboard macros (kbd macros)
+;; https://www.emacswiki.org/emacs/KeyboardMacros
+;; easily insert haskell code block in org
+(fset 'insert-org-code-block-haskell
+   "\C-e<s\C-ihaskell :exports both\C-n")
+
 ;; Key Bindings
 (global-set-key (kbd "C-M-l") 'linum-mode)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -105,6 +111,7 @@
 (global-set-key (kbd "M-s") 'helm-occur)
 (global-set-key (kbd "C-c m i") 'helm-do-ag)
 (global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-c h") 'insert-org-code-block-haskell)
 (define-key c-mode-base-map (kbd "C-u") (function company-complete))
 (define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
 
