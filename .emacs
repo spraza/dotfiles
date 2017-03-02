@@ -31,9 +31,6 @@
 
 ;; org/babel configuration (inspiration from https://github.com/hrs/dotfiles/blob/master/emacs.d/configuration.org)
 ;; display settings
-(add-hook 'org-mode-hook
-	  (lambda ()
-	    (org-bullets-mode t)))
 (setq org-ellipsis " ...")
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
