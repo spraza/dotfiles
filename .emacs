@@ -15,7 +15,7 @@
 ;;       Some are installed manually (see later sections of the file)
 (require 'package)
 ;; List of packages
-(setq package-list '(company flycheck haskell-mode))
+(setq package-list '(company flycheck haskell-mode multiple-cursors))
 ;; Package location(s)
 (add-to-list 'package-archives
 	     '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
@@ -93,6 +93,18 @@
 ;; Start rdm (rtags server) automatically in C/C++ modes
 (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
 (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
+
+;; multiple-cursors setup
+;; see details at: https://github.com/magnars/multiple-cursors.el
+(require 'multiple-cursors)
+;; set rectangular region anchor
+(global-set-key (kbd "C-c m r") 'set-rectangular-region-anchor)
+;; mark many occurences inside a region function
+(global-set-key (kbd "C-c m e") 'mc/edit-lines)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
+;; mark one more occurence (doesn't require an active region)
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
 
 ;; Keyboard macros (kbd macros)
 ;; https://www.emacswiki.org/emacs/KeyboardMacros
