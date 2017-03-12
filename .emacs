@@ -95,18 +95,8 @@
 (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
 
 ;; multiple-cursors setup
-;; see details at: https://github.com/magnars/multiple-cursors.el
+;; https://github.com/magnars/multiple-cursors.el
 (require 'multiple-cursors)
-;; set rectangular region anchor
-(global-set-key (kbd "C-c m r") 'set-rectangular-region-anchor)
-;; mark many occurences inside a region function
-(global-set-key (kbd "C-c m e") 'mc/edit-lines)
-(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-c m N") 'mc/insert-numbers)
-(global-set-key (kbd "C-c m L") 'mc/insert-letters)
-;; mark one more occurence (doesn't require an active region)
-(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
 
 ;; expand-region setup
 ;; https://github.com/magnars/expand-region.el
@@ -125,16 +115,35 @@
    "\C-e<s\C-ihaskell :exports both\C-n")
 
 ;; Key Bindings
-(global-set-key (kbd "C-M-l") 'linum-mode)
+;;; multiple-cursors
+;;;; set rectangular region anchor
+(global-set-key (kbd "C-c m r") 'set-rectangular-region-anchor)
+;;; mark many occurences inside a region function
+(global-set-key (kbd "C-c m e") 'mc/edit-lines)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c m N") 'mc/insert-numbers)
+(global-set-key (kbd "C-c m L") 'mc/insert-letters)
+;;;; mark one more occurence (doesn't require an active region)
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+;;; expand-region
+(global-set-key (kbd "M--") 'er/expand-region)
+(global-set-key (kbd "M-=") 'er/contract-region)
+;;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x f") 'helm-find-with-prefix-arg)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "M-s") 'helm-occur)
 (global-set-key (kbd "C-c m i") 'helm-do-ag)
 (global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-c TAB") 'helm-copy-to-buffer)
+;;; org-mode
 (global-set-key (kbd "C-c h") 'insert-org-code-block-haskell)
+;;; rtags + company-complete
 (define-key c-mode-base-map (kbd "C-u") (function company-complete))
 (define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
+;;; other (emacs)
+(global-set-key (kbd "C-M-l") 'linum-mode)
 
 ;; Customize emacs mode line
 ;; using setq-default; applies to /all/ modes
