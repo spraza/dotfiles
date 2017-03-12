@@ -102,6 +102,8 @@
 ;; mark many occurences inside a region function
 (global-set-key (kbd "C-c m e") 'mc/edit-lines)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c m N") 'mc/insert-numbers)
+(global-set-key (kbd "C-c m L") 'mc/insert-letters)
 ;; mark one more occurence (doesn't require an active region)
 (global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
