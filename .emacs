@@ -132,6 +132,11 @@
 ;;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x f") 'helm-find-with-prefix-arg)
+;;;; Use TAB instead of C-j to navigate directories
+;;;; The reason helm folks stopped using TAB is because in helm, there is no
+;;;; TAB completion; it's just a key to execute actions. More details here:
+;;;; https://github.com/emacs-helm/helm/wiki#helm-interaction-model
+(define-key helm-find-files-map "\t" 'helm-execute-persistent-action)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "M-s") 'helm-occur)
 (global-set-key (kbd "C-c m i") 'helm-do-ag)
