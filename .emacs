@@ -15,7 +15,7 @@
 ;;       Some are installed manually (see later sections of the file)
 (require 'package)
 ;; List of packages
-(setq package-list '(company flycheck haskell-mode multiple-cursors))
+(setq package-list '(company flycheck haskell-mode multiple-cursors expand-region))
 ;; Package location(s)
 (add-to-list 'package-archives
 	     '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
@@ -107,6 +107,16 @@
 ;; mark one more occurence (doesn't require an active region)
 (global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+
+;; expand-region setup
+;; https://github.com/magnars/expand-region.el
+(require 'expand-region)
+(global-set-key (kbd "M--") 'er/expand-region)
+(global-set-key (kbd "M-=") 'er/contract-region)
+
+;; parens tricks
+;; not using paredits for now
+;; can use C-M-b/f to go back and forward for matching parens
 
 ;; Keyboard macros (kbd macros)
 ;; https://www.emacswiki.org/emacs/KeyboardMacros
