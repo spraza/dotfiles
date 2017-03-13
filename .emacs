@@ -18,7 +18,7 @@
 (setq package-list '(company flycheck haskell-mode multiple-cursors expand-region))
 ;; Package location(s)
 (add-to-list 'package-archives
-	     '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
+	     '("MELPA" . "https://melpa.org/packages/") t)
 ;; Activate all the packages (in particular autoloads)
 (package-initialize)
 ;; Fetch the list of packages available
