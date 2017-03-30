@@ -213,3 +213,6 @@ export LC_ALL=POSIX
 # This will ask for passphrase once and then won't ask again
 # for git clone/pull/push etc.
 alias sshauth="eval \"\$(ssh-agent -s)\" && ssh-add ~/.ssh/id_rsa"
+
+# 2.7) clang aliases
+alias clang++="clang++ -Werror -std=c++14"

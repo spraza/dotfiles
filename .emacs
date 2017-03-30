@@ -104,6 +104,9 @@
 (global-set-key (kbd "M--") 'er/expand-region)
 (global-set-key (kbd "M-=") 'er/contract-region)
 
+;; clang-format setup
+(load "/usr/share/emacs/site-lisp/clang-format-3.8/clang-format.el")
+
 ;; parens tricks
 ;; not using paredits for now
 ;; can use C-M-b/f to go back and forward for matching parens
@@ -150,6 +153,8 @@
 ;;; rtags + company-complete
 (define-key c-mode-base-map (kbd "C-u") (function company-complete))
 (define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
+;; clang-format
+(global-set-key (kbd "C-c c") 'clang-format-region)
 ;;; other (emacs)
 (global-set-key (kbd "C-M-l") 'linum-mode)
 
