@@ -101,8 +101,6 @@
 ;; expand-region setup
 ;; https://github.com/magnars/expand-region.el
 (require 'expand-region)
-(global-set-key (kbd "M--") 'er/expand-region)
-(global-set-key (kbd "M-=") 'er/contract-region)
 
 ;; clang-format setup
 (load "/usr/share/emacs/site-lisp/clang-format-3.8/clang-format.el")
@@ -154,7 +152,8 @@
 (define-key c-mode-base-map (kbd "C-u") (function company-complete))
 (define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
 ;; clang-format
-(global-set-key (kbd "C-c c") 'clang-format-region)
+(global-set-key (kbd "C-c c r") 'clang-format-region)
+(global-set-key (kbd "C-c c b") 'clang-format-buffer)
 ;;; other (emacs)
 (global-set-key (kbd "C-M-l") 'linum-mode)
 
