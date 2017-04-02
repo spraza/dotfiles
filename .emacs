@@ -51,7 +51,13 @@
  'org-babel-load-languages
  '((emacs-lisp . t)
    (haskell . t)
+   (C . t)
    ))
+;; setup c++ compiler for org-babel
+(setq org-babel-C++-compiler
+      (concat "clang++ -Werror -std=c++14 "
+	      "-I"
+	      (expand-file-name ".")))
 ;; don't want to type "yes" everytime I want to execute some code
 (setq org-confirm-babel-evaluate nil)
 
