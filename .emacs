@@ -83,7 +83,7 @@
 (require 'rtags)
 (require 'company)
 (require 'flycheck-rtags)
-(require 'rtags-helm)
+;; (require 'rtags-helm)
 ;; (setq rtags-use-helm t) ;; uncomment if helm rtags integration is required
 (setq rtags-autostart-diagnostics t)
 (setq rtags-completions-enabled t)
