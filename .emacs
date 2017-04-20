@@ -15,7 +15,7 @@
 ;;       Some are installed manually (see later sections of the file)
 (require 'package)
 ;; List of packages
-(setq package-list '(company flycheck haskell-mode multiple-cursors expand-region))
+(setq package-list '(company flycheck haskell-mode multiple-cursors expand-region markdown-mode))
 ;; Package location(s)
 (add-to-list 'package-archives
 	     '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
