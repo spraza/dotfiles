@@ -84,21 +84,19 @@
 (smooth-scrolling-mode 1)
 
 ;; rtags setup
-(add-to-list 'load-path "~/git-repos/rtags/build/src")
-(load-file "~/git-repos/rtags/build/src/rtags.el")
-(require 'rtags)
-(require 'company)
-(require 'flycheck-rtags)
-;; (require 'rtags-helm)
-;; (setq rtags-use-helm t) ;; uncomment if helm rtags integration is required
-(setq rtags-autostart-diagnostics t)
-(setq rtags-completions-enabled t)
-(rtags-diagnostics)
-(push 'company-rtags company-backends)
-(global-company-mode)
-;; Start rdm (rtags server) automatically in C/C++ modes
-(add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
-(add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
+;; (add-to-list 'load-path "~/git-repos/rtags/build/src")
+;; (load-file "~/git-repos/rtags/build/src/rtags.el")
+;; (require 'rtags)
+;; (require 'company)
+;; (require 'flycheck-rtags)
+;; (setq rtags-autostart-diagnostics t)
+;; (setq rtags-completions-enabled t)
+;; (rtags-diagnostics)
+;; (push 'company-rtags company-backends)
+;; (global-company-mode)
+;; ;; Start rdm (rtags server) automatically in C/C++ modes
+;; (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+;; (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
 
 ;; multiple-cursors setup
 ;; https://github.com/magnars/multiple-cursors.el
@@ -154,9 +152,9 @@
 (global-set-key (kbd "C-c TAB") 'helm-copy-to-buffer)
 ;;; org-mode
 (global-set-key (kbd "C-c h") 'insert-org-code-block-haskell)
-;;; rtags + company-complete
-(define-key c-mode-base-map (kbd "C-u") (function company-complete))
-(define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
+;; ;;; rtags + company-complete
+;; (define-key c-mode-base-map (kbd "C-u") (function company-complete))
+;; (define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
 ;; clang-format
 (global-set-key (kbd "C-c c r") 'clang-format-region)
 (global-set-key (kbd "C-c c b") 'clang-format-buffer)
