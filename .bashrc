@@ -215,4 +215,4 @@ export LC_ALL=POSIX
 alias sshauth="eval \"\$(ssh-agent -s)\" && ssh-add ~/.ssh/id_rsa"
 
 # 2.7) clang aliases
-alias clang++="clang++ -Werror -std=c++14"
+alias clang++="clang++ -Werror -std=c++14 -lpthread"
