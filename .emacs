@@ -55,7 +55,7 @@
    ))
 ;; setup c++ compiler for org-babel
 (setq org-babel-C++-compiler
-      (concat "clang++ -Werror -std=c++14 "
+      (concat "clang++ -Werror -std=c++14 -lpthread "
 	      "-I"
 	      (expand-file-name ".")))
 ;; don't want to type "yes" everytime I want to execute some code
