@@ -118,6 +118,8 @@
 ;; easily insert haskell code block in org
 (fset 'insert-org-code-block-haskell
    "\C-e<s\C-ihaskell :exports both\C-n")
+(fset 'insert-org-code-block-cpp
+   "\C-e<s\C-iC++ :exports both\C-n")
 
 ;; Key Bindings
 ;;; multiple-cursors
@@ -152,6 +154,7 @@
 (global-set-key (kbd "C-c TAB") 'helm-copy-to-buffer)
 ;;; org-mode
 (global-set-key (kbd "C-c h") 'insert-org-code-block-haskell)
+(global-set-key (kbd "C-c p") 'insert-org-code-block-cpp)
 ;; ;;; rtags + company-complete
 ;; (define-key c-mode-base-map (kbd "C-u") (function company-complete))
 ;; (define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
