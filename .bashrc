@@ -215,4 +215,7 @@ export LC_ALL=POSIX
 alias sshauth="eval \"\$(ssh-agent -s)\" && ssh-add ~/.ssh/id_rsa"
 
 # 2.7) clang aliases
-alias clang++="clang++ -Werror -std=c++14 -lpthread"
+# Not using memory sanitizer (msan) since it requires stdlib to be built with msan as well
+# Note that Chandler mentioned in one of his talks that LLVM/Clang project may ship with a
+# prebuild stdlib with msan.
+alias clang++="clang++ -Werror -std=c++14 -fsanitize=address -lpthread"
