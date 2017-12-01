@@ -51,6 +51,7 @@
  'org-babel-load-languages
  '((emacs-lisp . t)
    (haskell . t)
+   (python . t)   
    (C . t)
    ))
 ;; setup c++ compiler for org-babel
@@ -120,6 +121,8 @@
    "\C-e<s\C-ihaskell :exports both\C-n")
 (fset 'insert-org-code-block-cpp
    "\C-e<s\C-iC++ :exports both\C-n")
+(fset 'insert-org-code-block-python
+   "\C-e<s\C-ipython :results output :exports both\C-n")
 
 ;; Key Bindings
 ;;; multiple-cursors
@@ -155,6 +158,7 @@
 ;;; org-mode
 (global-set-key (kbd "C-c h") 'insert-org-code-block-haskell)
 (global-set-key (kbd "C-c p") 'insert-org-code-block-cpp)
+(global-set-key (kbd "C-c t") 'insert-org-code-block-python)
 ;; ;;; rtags + company-complete
 ;; (define-key c-mode-base-map (kbd "C-u") (function company-complete))
 ;; (define-key c-mode-base-map (kbd "C-i") (function rtags-find-symbol-at-point))
