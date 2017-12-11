@@ -214,8 +214,10 @@ export LC_ALL=POSIX
 # for git clone/pull/push etc.
 alias sshauth="eval \"\$(ssh-agent -s)\" && ssh-add ~/.ssh/id_rsa"
 
-# 2.7) clang aliases
+# 2.7) clang aliases and environment variable exports
 # Not using memory sanitizer (msan) since it requires stdlib to be built with msan as well
 # Note that Chandler mentioned in one of his talks that LLVM/Clang project may ship with a
 # prebuild stdlib with msan.
-alias clang++="clang++ -Werror -std=c++14 -fsanitize=address -lpthread"
+export ASAN_OPTIONS=symbolize=1
+export ASAN_SYMBOLIZER_PATH=$(which llvm-symbolizer)
+alias clang++="clang++ -g3 -fno-omit-frame-pointer -Werror -std=c++14 -fsanitize=address -lpthread"
