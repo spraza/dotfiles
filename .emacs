@@ -64,8 +64,8 @@
 
 ;; helm, async setup
 ;; https://github.com/emacs-helm/helm
-(add-to-list 'load-path "~/git-repos/emacs-async")
-(add-to-list 'load-path "~/git-repos/helm")
+(add-to-list 'load-path "~/code/git-repos/emacs-async")
+(add-to-list 'load-path "~/code/git-repos/helm")
 (require 'helm-config)
 ;; Utility function - asks for root directory for search + calls helm-find
 (defun helm-find-with-prefix-arg ()
@@ -75,18 +75,18 @@
 
 ;; helm-ag setup
 ;; https://github.com/syohex/emacs-helm-ag
-(add-to-list 'load-path "~/git-repos/emacs-helm-ag")
-(load-file "~/git-repos/emacs-helm-ag/helm-ag.el")
+(add-to-list 'load-path "~/code/git-repos/emacs-helm-ag")
+(load-file "~/code/git-repos/emacs-helm-ag/helm-ag.el")
 
 ;; Smooth scrolling
 ;; https://github.com/aspiers/smooth-scrolling
-(load-file "~/git-repos/smooth-scrolling/smooth-scrolling.el")
+(load-file "~/code/git-repos/smooth-scrolling/smooth-scrolling.el")
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
 
 ;; rtags setup
-;; (add-to-list 'load-path "~/git-repos/rtags/build/src")
-;; (load-file "~/git-repos/rtags/build/src/rtags.el")
+;; (add-to-list 'load-path "~/code/git-repos/rtags/build/src")
+;; (load-file "~/code/git-repos/rtags/build/src/rtags.el")
 ;; (require 'rtags)
 ;; (require 'company)
 ;; (require 'flycheck-rtags)
@@ -108,7 +108,7 @@
 (require 'expand-region)
 
 ;; clang-format setup
-(load "/usr/share/emacs/site-lisp/clang-format-3.8/clang-format.el")
+;; (load "/usr/share/emacs/site-lisp/clang-format-3.8/clang-format.el")
 
 ;; parens tricks
 ;; not using paredits for now
@@ -232,3 +232,4 @@
 	       
 	       "%-" ;; fill with '-'
 	       ))
+
