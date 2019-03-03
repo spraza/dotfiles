@@ -174,7 +174,7 @@ PS1="\[\033[0;34m\][\u@\h:\w]$ \[\033[0m\]"
 # mkdir and cd, both, in one go
 function mdir
 {
-    command mkdir $1 && cd $1
+    command mkdir -p $1 && cd $1
 }
 
 ## -----------------------
