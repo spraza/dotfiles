@@ -78,6 +78,10 @@
 (add-to-list 'load-path "~/code/github-repos/emacs-helm-ag")
 (load-file "~/code/github-repos/emacs-helm-ag/helm-ag.el")
 
+;; make tab completion work with helm again
+(define-key helm-map (kbd "TAB") #'helm-execute-persistent-action)
+(define-key helm-map (kbd "<tab>") #'helm-execute-persistent-action)
+
 ;; Smooth scrolling
 ;; https://github.com/aspiers/smooth-scrolling
 (load-file "~/code/github-repos/smooth-scrolling/smooth-scrolling.el")

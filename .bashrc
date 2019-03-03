@@ -221,3 +221,9 @@ alias sshauth="eval \"\$(ssh-agent -s)\" && ssh-add ~/.ssh/id_rsa"
 export ASAN_OPTIONS=symbolize=1
 export ASAN_SYMBOLIZER_PATH=$(which llvm-symbolizer)
 alias clang++="clang++ -g3 -fno-omit-frame-pointer -Werror -std=c++14 -fsanitize=address -lpthread"
+
+# 2.8) tmux
+# https://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
+# https://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
+alias tmux='TERM=xterm-256color tmux'
+export TERM=xterm-256color
