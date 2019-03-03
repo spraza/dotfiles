@@ -64,8 +64,8 @@
 
 ;; helm, async setup
 ;; https://github.com/emacs-helm/helm
-(add-to-list 'load-path "~/code/git-repos/emacs-async")
-(add-to-list 'load-path "~/code/git-repos/helm")
+(add-to-list 'load-path "~/code/github-repos/emacs-async")
+(add-to-list 'load-path "~/code/github-repos/helm")
 (require 'helm-config)
 ;; Utility function - asks for root directory for search + calls helm-find
 (defun helm-find-with-prefix-arg ()
@@ -75,18 +75,18 @@
 
 ;; helm-ag setup
 ;; https://github.com/syohex/emacs-helm-ag
-(add-to-list 'load-path "~/code/git-repos/emacs-helm-ag")
-(load-file "~/code/git-repos/emacs-helm-ag/helm-ag.el")
+(add-to-list 'load-path "~/code/github-repos/emacs-helm-ag")
+(load-file "~/code/github-repos/emacs-helm-ag/helm-ag.el")
 
 ;; Smooth scrolling
 ;; https://github.com/aspiers/smooth-scrolling
-(load-file "~/code/git-repos/smooth-scrolling/smooth-scrolling.el")
+(load-file "~/code/github-repos/smooth-scrolling/smooth-scrolling.el")
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
 
 ;; rtags setup
-;; (add-to-list 'load-path "~/code/git-repos/rtags/build/src")
-;; (load-file "~/code/git-repos/rtags/build/src/rtags.el")
+;; (add-to-list 'load-path "~/code/github-repos/rtags/build/src")
+;; (load-file "~/code/github-repos/rtags/build/src/rtags.el")
 ;; (require 'rtags)
 ;; (require 'company)
 ;; (require 'flycheck-rtags)
