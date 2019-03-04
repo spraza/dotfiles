@@ -234,7 +234,7 @@ alias clang++="clang++ -g3 -fno-omit-frame-pointer -Werror -std=c++14 -fsanitize
 # 2.8) tmux
 # https://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
 # https://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
-alias tmux='TERM=xterm-256color tmux'
+alias tmux='TERM=xterm-256color tmux -u'
 export TERM=xterm-256color
 
 #) 2.9 go path
