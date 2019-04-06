@@ -14,12 +14,36 @@ C:\Users\username\.vscode\extensions on Windows 10 (e.g., essentially the same p
 Alternately, just go to the Extensions, show installed extensions, and install those on your target installation. For me, copying the extensions worked just fine, but it may be extension-specific, particularly if moving between platforms, depending on what the extension does.
 
 
-
 From: https://pawelgrzybek.com/sync-vscode-settings-and-snippets-via-dotfiles-on-github/
 
 mv ~/Library/Application\ Support/Code/User/settings.json ~/.dotfiles/VSCode/
 mv ~/Library/Application\ Support/Code/User/keybindings.json ~/.dotfiles/VSCode/
 mv ~/Library/Application\ Support/Code/User/snippets/ ~/.dotfiles/VSCode/
 
+
+-------------------------------------------------------------------------
+
+For extensions: https://stackoverflow.com/questions/35773299/how-can-you-export-vs-code-extension-list
+
+$ code --list-extensions | xargs -L 1 echo code --install-extension
+
+$ code --list-extensions | xargs -L 1 echo code --install-extension
+code --install-extension bungcip.better-toml
+code --install-extension hiro-sun.vscode-emacs
+code --install-extension ms-python.python
+code --install-extension redhat.java
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-dependency
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+
+
+------------------------------------------------------------------------
+
+For path issues: https://stackoverflow.com/questions/30065227/run-open-vscode-from-mac-terminal
+
+Read about shell command install code path option within the editor.
 
 
