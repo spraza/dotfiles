@@ -217,7 +217,7 @@ export VISUAL='emacs -nw'
 # export GREP_OPTIONS='--color=auto'
 # export GREP_COLOR='1;31' # green for matches
 ## Instead, use alias
-alias grep = 'grep --color=auto'
+alias grep='grep --color=auto'
 
 # 2.5) sort options
 # Ensures cross-platform sorting behavior of GNU sort.
