@@ -239,3 +239,4 @@ export TERM=xterm-256color
 
 #) 2.9 go path
 export PATH=$PATH:/usr/local/go/bin
+
