@@ -46,4 +46,19 @@ For path issues: https://stackoverflow.com/questions/30065227/run-open-vscode-fr
 
 Read about shell command install code path option within the editor.
 
+Mac path (if installed under applications):
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+
+------------------------------------------------------------------------
+
+Opening new folder from CLI within same window:
+
+Same window but overeride existing folders: https://github.com/Microsoft/vscode/issues/14847
+
+Add folder to workspace: https://code.visualstudio.com/docs/editor/multi-root-workspaces
+
+
+
 
