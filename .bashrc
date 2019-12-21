@@ -144,7 +144,7 @@ if [ "$PS1" ]; then
     # define a bash function which escapes the string before writing it; if you
     # have a fix for that which doesn't slow the command down, please submit
     # a patch or pull request.
-    PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo -e $$\\t$USER\\t$HOSTNAME\\tscreen $WINDOW\\t`date +%D%t%T%t%Y%t%s`\\t$PWD"$(history 1)" >> ~/.bash_eternal_history'
+    # PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo -e $$\\t$USER\\t$HOSTNAME\\tscreen $WINDOW\\t`date +%D%t%T%t%Y%t%s`\\t$PWD"$(history 1)" >> ~/.bash_eternal_history'
 
     # Turn on checkwinsize
     shopt -s checkwinsize
@@ -175,6 +175,12 @@ PS1="\[\033[0;34m\][\u@\h:\w]$ \[\033[0m\]"
 function mdir
 {
     command mkdir -p $1 && cd $1
+}
+
+# disk usage of directory (input param), sorted by file size (desc order)
+function dus
+{
+    command du $1 -ch --max-depth=1 | sort -h | tac
 }
 
 ## -----------------------
@@ -222,8 +228,8 @@ alias grep='grep --color=auto'
 # 2.5) sort options
 # Ensures cross-platform sorting behavior of GNU sort.
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-unset LANG
-export LC_ALL=POSIX
+#unset LANG
+#export LC_ALL=POSIX
 
 # 2.6) start ssh-agent and ssh-add
 # This will ask for passphrase once and then won't ask again
@@ -247,3 +253,9 @@ export TERM=xterm-256color
 #) 2.9 go path
 export PATH=$PATH:/usr/local/go/bin
 
+#) cask
+#export PATH="/home/spraza/.cask/bin:$PATH"
+
+#)
+#setxkbmap -option altwin:swap_alt_win
+#xmodmap ~/.xmodmap
