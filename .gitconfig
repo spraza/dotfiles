@@ -1,0 +1,10 @@
+[user]
+	email = paymaan.syed@gmail.com
+	name = Syed Paymaan Raza
+	username = spraza
+
+[core]
+	editor = emacs
+
+# Good examples:
+# https://gist.github.com/pksunkara/988716
