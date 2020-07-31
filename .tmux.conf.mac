@@ -1,0 +1,84 @@
+# Use C-a as prefix
+# Press "C-a", release, and then tmux command like "c" to create
+# new window
+set-option -g prefix C-a
+
+# Need this trick to avoid issues with emacs "C-a" to start selection.
+# Now with emacs running within tmux, will need to press "C-a", and
+# then "a" again, to start selection.
+# This also helps with nested tmux sessions.
+bind-key a send-prefix
+
+# Neat trick to go the last window.
+# Press "C-a", release, "C-a" again
+# Easy alternative: "C-a-a" 
+bind-key C-a last-window
+
+# Use \ and | instead of the hard-to-remember tmux key binding
+# for spliting window horizontally and vertically
+bind-key \\ split-window -h
+bind-key - split-window -v
+
+# Set status bar's look
+#set -g status-bg green
+set -g status-bg black
+set -g status-fg white
+set -g status-interval 2
+
+# Highlight active tab/window
+set -g window-status-current-style bg=red
+
+# Set what to show on left and right of the status bar
+set -g status-left "#[fg=green]#H "
+set -g status-left-length 50
+
+#set -g status-right '#[fg=yellow]#(uptime | cut -d "," -f1)'
+
+# Use tmux-mem-cpu-load: https://github.com/thewtex/tmux-mem-cpu-load
+#set -g status-right "#[fg=green]#(tmux-mem-cpu-load --colors --interval 2 -a 3)#[default]"
+#set -g status-right-length 60
+
+# Highlight active pane within the tab/window
+set -g pane-active-border-style fg=blue
+
+# Show which windows have had an activity
+setw -g monitor-activity on
+#set -g visual-activity on
+
+# Start window indexing from 1
+# I know... :)
+set -g base-index 1
+
+# If multiple clients are connected, tmux picks the minimum of the client's screen size
+# as the screen size for the session  (Will notice ---- type pattern).
+# agressive-resize relaxes (irony with the choice of words here) this constraint by
+# using the minimum of smallest client actually looking at the session.
+setw -g aggressive-resize on
+
+# Use 256 colors in the terminal
+set -g default-terminal "screen-256color"
+
+# Set scroll history
+set -g history-limit 50000
+
+# Plugins using Tmux Plugin Manager (tpm)
+# NOTE:
+#     1) Needs "$git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm" manually first
+#     2) At the first run, inside tmux, press "C-a I" to load the new plugins (one time operation only)
+# USAGE:
+#     - Copying withing tmux (doesn't need any plugins)
+#       -- Go to edit mode using C-a [, make selection, then copy using M-w, then paste in tmux using C-a ]
+#     - Copying to system clipboard
+#       -- Needs "tmux-yank"
+#       -- Go to edit mode using C-a [, make selection, then copy to clipboard using "y", then paste.
+#     - Searching for stuff
+#       -- Needs "tmux-copycat"
+#       -- Go to edit mode using C-a [, then press "C-a /", insert text to search, use "n"/"N" to traverse
+# set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'tmux-plugins/tmux-copycat'
+# set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+# run '~/.tmux/plugins/tpm/tpm'
+
+set-option -g default-shell /usr/local/bin/fish
