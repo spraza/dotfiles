@@ -82,3 +82,4 @@ set -g history-limit 50000
 # run '~/.tmux/plugins/tpm/tpm'
 
 set-option -g default-shell /usr/local/bin/fish
+set -g mouse on 
