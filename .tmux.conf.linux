@@ -94,4 +94,4 @@ set -g @plugin 'tmux-plugins/tmux-yank'
 run '~/.tmux/plugins/tpm/tpm'
 
 set -g default-shell /usr/bin/fish
-set -g mouse on 
+# set -g mouse on 
